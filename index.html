@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Happy Birthday MOM!!!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="sakura.css" />
+</head>
+<body>
+	<div class="card" style="cursor: pointer;">
+		<div class="imgBox" >
+			<div class="bark" onclick="togglePlay();"></div>
+			<img src="cover.jpg">
+		</div>
+		<div class="details" onclick="generateWord();">
+			<p class="text-right xsmall"><span id="date"></p>
+			<p class="large"><span id="dear"></p>
+			<p class="text-justify small" >	<span id="message"></p>
+			<p class="text-right medium"><span id="greetings"></p>
+      <p class="text-right medium"><span id="from"></p>
+		</div>
+	</div>
+
+	<audio autoplay loop id="myAudio"><source src="momsong.mp3"></audio>
+<!-- partial -->
+   <script src="message.js" text="text/javascript"></script>
+   <script src="sakura.js" text="text/javascript"></script>
+   <script>
+      var sakura = new Sakura('body', {
+        colors: [
+          {
+            gradientColorStart: 'rgba(255, 183, 197, 0.9)',
+            gradientColorEnd: 'rgba(255, 197, 208, 0.9)',
+            gradientColorDegree: 120,
+          },
+          {
+            gradientColorStart: 'rgba(255,189,189)',
+            gradientColorEnd: 'rgba(227,170,181)',
+            gradientColorDegree: 120,
+          },
+          {
+            gradientColorStart: 'rgba(212,152,163)',
+            gradientColorEnd: 'rgba(242,185,196)',
+            gradientColorDegree: 120,
+          },
+        ],
+        delay: 200,
+      });
+
+   		var myAudio = document.getElementById("myAudio");
+		var isPlaying = false;
+
+		function togglePlay() {
+		  isPlaying ? myAudio.pause() : myAudio.play();
+		};
+
+		myAudio.onplaying = function() {
+		  isPlaying = true;
+		};
+		myAudio.onpause = function() {
+		  isPlaying = false;
+		};
+
+		var play = function(event){ event.srcElement.classList.toggle("playing")
+}
+		
+   </script>
+
+</body>
+</html>
